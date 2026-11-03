@@ -1,7 +1,8 @@
 <?php
 
-test('the application returns a successful response', function () {
+test('the home page redirects to the pesanan list', function () {
     $response = $this->get('/');
 
-    $response->assertStatus(200);
+    $response
+        ->assertRedirectToRoute('pesanan.index');
 });
