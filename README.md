@@ -21,6 +21,35 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Verifikasi Fitur Pesanan Laundry
+
+Jalankan migration dan seeder lokal dengan perintah berikut:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Jalankan seluruh pengujian:
+
+```bash
+php artisan test --compact
+```
+
+Pengujian fitur mencakup halaman daftar, tambah, ubah, hapus, pencarian, filter,
+validasi input, dan penolakan data duplikat.
+
+## Keamanan Konfigurasi
+
+File `.env` berisi konfigurasi lokal dan tidak boleh di-commit. Repository hanya
+menyimpan `.env.example` sebagai template tanpa nilai rahasia. Verifikasi sebelum
+commit dengan:
+
+```bash
+git ls-files .env
+```
+
+Perintah tersebut harus tidak menghasilkan output.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
