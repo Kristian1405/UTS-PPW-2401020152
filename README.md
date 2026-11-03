@@ -21,6 +21,22 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Konfigurasi Basis Data
+
+Aplikasi praktik ini menggunakan MySQL atau MariaDB. Salin `.env.example` menjadi
+`.env`, buat basis data `laundry`, lalu isi kredensial database lokal sebelum
+menjalankan migration:
+
+```bash
+php artisan key:generate
+php artisan migrate:fresh --seed
+```
+
+Schema menggunakan dua tabel yang berelasi satu-ke-banyak: `jenis_layanan`
+memiliki banyak `pesanan_laundry`. Foreign key menerapkan `ON UPDATE CASCADE`
+dan `ON DELETE RESTRICT`; kolom kode dan nomor telepon bersifat `UNIQUE`, dan
+berat cucian dibatasi `CHECK` antara 1 sampai 20 kg.
+
 ## Verifikasi Fitur Pesanan Laundry
 
 Jalankan migration dan seeder lokal dengan perintah berikut:
